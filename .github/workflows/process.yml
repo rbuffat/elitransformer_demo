@@ -7,7 +7,7 @@ jobs:
   build:
     name: Process
 
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
 
     steps:
       - uses: actions/checkout@v2
@@ -38,7 +38,7 @@ jobs:
         run: |
           git clone --depth=1 --branch=gh-pages https://github.com/osmlab/editor-layer-index.git
   
-      - name: Run Watchdog
+      - name: Run processing
         run: |
           python process_eli.py
 
