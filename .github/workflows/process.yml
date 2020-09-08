@@ -17,9 +17,9 @@ jobs:
         with:
           python-version: '3.8'
 
-      - name: Install geos
+      - name: Install GDAL and GEOS
         run: |
-          sudo apt-get install libgeos-dev
+          sudo apt-get install gdal-bin libgeos-dev
           
       - name: Install Python dependencies
         run: |
