@@ -11,7 +11,7 @@ from shapely.validation import make_valid
 import fiona
 
 eli_path = r"editor-layer-index/sources"
-out_file = r"imagery.geojson"
+out_file = r"deploy/imagery.geojson"
 
 ignore_list = {'osmbe',  # 'OpenStreetMap (Belgian Style)'
                'osmfr',  # 'OpenStreetMap (French Style)'
@@ -145,6 +145,9 @@ def process_sources():
                              # 'no_tile_header': 'str'
                              },
               'geometry': 'Unknown'}
+
+    if not os.path.exists("deploy"):
+        os.mkdir("deploy")
 
     with fiona.open(out_file,
                     mode='w',
