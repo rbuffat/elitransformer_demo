@@ -171,7 +171,6 @@ def process_sources():
 
             # Filter WMS imagery without compatible projections
             if source['properties']['type'] == 'wms':
-                print(source['properties']['available_projections'])
 
                 # WMS sources require available_projections
                 if 'available_projections' not in source['properties']:
